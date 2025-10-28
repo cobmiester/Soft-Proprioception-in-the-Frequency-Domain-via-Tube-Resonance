@@ -140,16 +140,6 @@ RunID, BaselineID, Label, 0Hz, 10Hz, 20Hz, …, 8000Hz
 
 ---
 
-## Citation
-
-If you use this code, please cite:
-
-```
-Jacob Bee, Rui Wu, Helmut Hauser, "Soft-Proprioception in the Frequency Domain via Tube Resonance"
-```
-
----
-
 ## License
 
 Academic and research use only.
