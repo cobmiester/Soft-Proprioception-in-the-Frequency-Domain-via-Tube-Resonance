@@ -11,7 +11,7 @@ This toolkit provides real-time spectral acquisition, peak/dip detection, machin
 * **`Find_Peaks_And_Dips.py`** — Post-process master CSV to detect top-K spectral peaks and dips (optional parabolic refinement).
 * **`classifiers.py`** — Train/Test/Live scikit-learn classifier on normalized spectra; includes pose display and optional MP4 recording.
 * **`compare_FFT_traces.py`** — Dynamic-programming alignment of peak/dip frequency lists for open-cut ↔ baseline similarity scoring.
-* **`Compare_to_physical_models.py`** — Generate tube-harmonic theory (closed–closed / closed–open), detect dips in FFT CSVs, and match dips to theory.
+* **`Compare_to_physical_models.py`** — Generate tube-harmonic theory (closed–closed / closed–open), detect peaks in FFT CSVs, and match dips to theory.
 
 ---
 
@@ -80,8 +80,8 @@ pip install opencv-python
    python3 Compare_to_physical_models.py
    ```
 
-   * Builds theoretical harmonics, detects dips from FFT CSV, and reports the best-fitting model.
-   * Outputs: `dips_detected.csv`, `dip_matches_vs_theory.csv`.
+   * Builds theoretical harmonics, detects peaks from FFT CSV, and reports the best-fitting model.
+   * Outputs: `batch_peaks_diagnostics.csv`, `batch_file_summary.csv`, `results_for_latex.csv`.
 
 ---
 
@@ -120,10 +120,6 @@ pip install opencv-python
 
   * **Closed–Closed:** fₙ = n · v / (2 L)
   * **Closed–Open:** fₙ = (2n − 1) · v / (4 L)
-* Optionally estimates effective sound speed using spacing:
-  v_eff = 2 · L_ref · Δf
-* “Slit-aware” CC mode filters modes with strong displacement at the slit.
-* Detects dips, matches them to predicted harmonics within tolerance, and reports the best fit.
 
 ---
 
